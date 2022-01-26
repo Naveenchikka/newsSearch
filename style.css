@@ -1,0 +1,84 @@
+#target{
+margin-left: 169px;
+}
+
+
+
+.providerImg 
+{
+  height: 112px;
+  width: 112px;
+}
+
+.providerNm 
+{
+    font-size: 12px arial;
+    color: #212024;
+}
+
+.blocks1
+{
+display: flex;
+justify-content: center;
+margin: 16px 0 16px 16px;
+}
+
+
+#SideBySide
+{
+display: flex;
+flex-direction:inherit;
+justify-content: space-around;
+margin-bottom: 16px;
+box-sizing: border-box;
+border-radius: 5px;
+border: 1px solid;
+}
+
+.RNNXgb {
+    display: flex;
+    z-index: 3;
+    height: 44px;
+    background: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    border-radius: 24px;
+    margin: 0 auto;
+    width: 690px;
+    position: relative;
+    top: 15px;
+}
+
+input
+{
+    position: relative;
+    outline: none;
+    border: none;
+    width:100%;
+    top: 10px;
+    margin-left: 15px;
+    
+}
+
+.titles
+{
+    color: #202124;
+    font-family: Roboto-Medium,sans-serif;
+    font-size: 18px;
+    line-height: 1.3333333333333333em;
+}
+
+.Providers 
+{
+    margin-bottom: 8px;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+
+.descriptions
+{
+    color: #70757a;
+    font-size: 14px;
+    line-height: 1.4285714285714286em;
+    margin-top: 8px;
+}
