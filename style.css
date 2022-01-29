@@ -1,5 +1,5 @@
 #target{
-margin-left: 190px;
+margin-left: 210px;
 }
 
 .SearchBar {
@@ -35,7 +35,7 @@ justify-content: space-around;
 margin-bottom: 16px;
 box-sizing: border-box;
 border-radius: 5px;
-border: 1px solid;
+border: 1px solid #dadce0;
 }
 
 .blocks1
@@ -115,7 +115,7 @@ margin: 16px 0 16px 16px;
     line-height: 1.25;
     white-space: normal;
     font-weight: bold;
-    margin-left: 200px;
+    margin-left: 220px;
     margin-bottom: 10px;
 }
 /* .hdtb-msel
@@ -136,6 +136,7 @@ margin: 16px 0 16px 16px;
     font-family: Roboto-Medium,sans-serif;
     font-size: 18px;
     line-height: 1.3333333333333333em;
+    text-decoration: none;
 }
 
 .Providers 
@@ -143,6 +144,9 @@ margin: 16px 0 16px 16px;
     margin-bottom: 8px;
     text-align: left;
     text-overflow: ellipsis;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: #202124;
 }
 
 .providerImg 

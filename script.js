@@ -1,17 +1,21 @@
-var keyword;
-var movie;
+
+var movie,keyword;
+
+
+$('.SearchBar').on('keydown', 'input', function(e) {
+	if (e.keyCode === 13) {
+	  e.preventDefault();
+		e.stopImmediatePropagation();
+	  //Do your stuff...
+	  getdata();
+	}
+  });
+
 async function getdata()
 {
 
     try {
 		keyword = document.getElementById('search').value;
-		// let year = document.getElementById('y').value;
-		// var e = document.getElementById('p');
-		// console.log(e);
-        // var value = e.options[e.selectedIndex].value;
-		// console.log("value",value);
-        // var text = e.options[e.selectedIndex].text;
-		// console.log("text",text);
 		var response = await fetch("https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q="+keyword+"&pageNumber=1&pageSize=20&autoCorrect=true&fromPublishedDate=null&toPublishedDate=null", {
 			"method": "GET",
 			"headers": {
@@ -28,16 +32,6 @@ async function getdata()
 		{
         createPost(movie);
 		}
-		// else 
-		// {
-		// document.getElementById('message').style.visibility= 'visible';
-		// setTimeout(()=>{
-		// 	document.getElementById('message').style.visibility= 'hidden';
-		// },5000);
-		 
-		// }
-		// if(movie)
-		//     document.getElementsByClassName('card').style.property= 'visible';
 	  } catch (err) {
 		console.error(err);
 		document.getElementById('err').innerHTML = "Server Error, Please search again";
@@ -45,12 +39,6 @@ async function getdata()
 
 }
 
-// function resetFields()
-// {
-// 	document.getElementById('t').value = '';
-// 	document.getElementById('y').value = '';
-// 	document.getElementById('p').selectedIndex = '';
-// }
 
 function dosomeFunction()
 {
@@ -80,21 +68,16 @@ function createPost(movie)
 	 providerDiv.id = 'provider'+i;
 	 providerDiv.className = 'Providers';
 	 providerDiv.innerHTML = movie.value[i].provider.name;
-	//  var newProvspan = document.createElement("span");
-	//  providerDiv.appendChild(newProvspan);
 	
-	
-	//  var providerName = document.createElement("span");
-    //  providerName.className = 'providerNm';
-	//  providerName.innerHTML = movie.value[i].provider.name;
-	//  providerDiv.appendChild(providerImg);
-	//  providerDiv.appendChild(providerName);
 	 frag.appendChild(providerDiv);
 
-	 var titleDiv = document.createElement("div");
+	 var titleDiv = document.createElement("a");
 	 titleDiv.id = 'title'+i;
 	 titleDiv.className = 'titles';
 	 titleDiv.innerHTML = movie.value[i].title;
+	 titleDiv.style.cursor = 'pointer';
+	 titleDiv.href = movie.value[i].url;
+	 titleDiv.target = "_blank";
 	 frag.appendChild(titleDiv);
 
      var descriptionDiv = document.createElement("div");
@@ -126,28 +109,6 @@ function createPost(movie)
  }
 
  document.getElementById('target').appendChild(fragment);
-//  for(var i =1; i<= movie.value; i++){
-// 	$('#target').append('<div id="r'+ i +'" class="ansbox"></div>')
-//   }
-// 	document.getElementById('display').style.visibility= 'visible';
-// 	document.getElementById('display').style.display = 'flex';
-// 	var img = document.getElementById('poster')
-// 	img.src = movie.Poster;
-
-// 	document.getElementById("name").innerHTML = movie.Title;
-// 	document.getElementById("dir").innerHTML = movie.Director;
-// 	document.getElementById("year").innerHTML = movie.Year;
-// 	document.getElementById("genre").innerHTML = movie.Genre;
-// 	document.getElementById("plot").innerHTML = movie.Plot;
-//     document.getElementById("imdb").innerHTML = movie.imdbRating;
-// 	document.getElementById("actors").innerHTML = movie.Actors;
-// }
-
-// function animateScroll(id) {
-// 	$('html, body').animate({
-// 	  scrollTop: ($(`#${id}`).offset().top - 50)
-// 	}, 800);
-//   }
 
 }
 
